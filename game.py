@@ -15,7 +15,7 @@ openai.api_key = os.getenv('FLASK_API_KEY')
 # 캐릭터 정보를 TXT 파일에 저장하는 함수
 def save_character_to_file(character):
     try:
-        with open('characters.txt', 'a', encoding='utf-8') as f:
+        with open('static/characters.txt', 'a', encoding='utf-8') as f:
             character_line = (
                 f"id:{character['id']},name:{character['name']},class:{character['class']},"
                 f"brain:{character['brain']},body:{character['body']},will:{character['will']},"
@@ -30,7 +30,7 @@ def save_character_to_file(character):
 def load_characters_from_file():
     characters = []
     try:
-        with open('characters.txt', 'r', encoding='utf-8') as f:
+        with open('static/characters.txt', 'r', encoding='utf-8') as f:
             for line in f:
                 character_data = dict(item.split(":") for item in line.strip().split(","))
                 # 숫자형으로 변환
@@ -68,7 +68,7 @@ def read_previous_responses():
 # 기본 경로는 game.py에서 처리하던 화면으로 렌더링
 @app.route('/')
 def game_page():
-    return render_template('game.html')
+    return render_template('zbgame/game.html')
 
 # /index 경로로 index.html 렌더링
 @app.route('/index')
