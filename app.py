@@ -15,16 +15,17 @@ openai.api_key = os.getenv('FLASK_API_KEY')
 # 이전 응답과 캐릭터 정보를 파일에서 읽어오는 함수
 def read_previous_responses():
     responses = ''
+    rules = ''
     
     if os.path.exists('responses.txt'):
         with open('responses.txt', 'r', encoding='utf-8') as file:
             responses = file.read().strip()
     
-    # if os.path.exists('characters.txt'):
-    #     with open('characters.txt', 'r', encoding='utf-8') as file:
-    #         characters = file.read().strip()
+    if os.path.exists('rules.txt'):
+        with open('rules.txt', 'r', encoding='utf-8') as file:
+            rules = file.read().strip()
 
-    return responses
+    return responses, rules
 
 @app.route('/')
 def index():
@@ -41,16 +42,15 @@ def call_gpt():
         if not prompt:
             return jsonify({"error": "프롬프트가 제공되지 않았습니다."}), 400
         
-        # 이전 응답 및 캐릭터 정보 읽기
-        previous_responses = read_previous_responses()
+        # 이전 응답 및 규칙 정보 읽기
+        previous_responses, rules = read_previous_responses()
 
         # GPT-4 모델 호출
         response = openai.ChatCompletion.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content": rules},
                 {"role": "user", "content": previous_responses},
-                #{"role": "user", "content": characters},
                 {"role": "user", "content": prompt}
             ],
             max_tokens=8000,
