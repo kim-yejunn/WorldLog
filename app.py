@@ -28,7 +28,7 @@ def read_previous_responses():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('zbgame/index.html')
 
 # GPT-4 API 호출을 처리하는 엔드포인트
 @app.route('/gpt', methods=['POST'])
@@ -71,4 +71,4 @@ def call_gpt():
 
 # Flask 애플리케이션 실행
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5001)
