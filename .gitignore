@@ -111,4 +111,7 @@ myenv/
 # mkdocs documentation
 /site
 
+#txt
+responses.txt
+
 # End of .gitignore
