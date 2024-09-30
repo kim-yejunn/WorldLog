@@ -98,6 +98,8 @@ venv/
 ENV/
 .env/
 .venv/
+myenv/
+.myenv/
 
 # Spyder project settings
 .spyderproject
