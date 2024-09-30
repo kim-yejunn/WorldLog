@@ -29,7 +29,7 @@ def read_previous_responses():
 
 @app.route('/')
 def index():
-    return render_template('zbgame/index.html')
+    return render_template('index.html')
 
 # GPT-4 API 호출을 처리하는 엔드포인트
 @app.route('/gpt', methods=['POST'])
