@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
 #from PyPDF2 import PdfReader
-import json
+import json 
 import openai
 import os
 import fitz  # PyMuPDF
