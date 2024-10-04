@@ -68,12 +68,12 @@ def read_previous_responses():
 # 기본 경로는 game.py에서 처리하던 화면으로 렌더링
 @app.route('/')
 def game_page():
-    return render_template('zbgame/game.html')
+    return render_template('zbgame/char.html')
 
-# /index 경로로 index.html 렌더링
-@app.route('/index')
-def index():
-    return render_template('index.html')
+# /main 경로로 main.html 렌더링
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 # GPT-4 API 호출을 처리하는 엔드포인트
 @app.route('/gpt', methods=['POST'])

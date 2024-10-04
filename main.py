@@ -28,8 +28,13 @@ def read_previous_responses():
     return responses, rules
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def start():
+    return render_template('start.html')
+
+# /main 경로로 main.html 렌더링
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 # GPT-4 API 호출을 처리하는 엔드포인트
 @app.route('/gpt', methods=['POST'])
