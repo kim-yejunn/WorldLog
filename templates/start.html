@@ -21,12 +21,27 @@
             height: 100vh;
         }
 
-        p {
-            font-size: 1.5rem;
-            color: #ecf0f1;
-            margin-bottom: 30px;
-            background-color: #b16721;
-        }
+        .p {
+    font-size: 1.5rem;
+    color: rgba(236, 240, 241, 1); /* 글씨색을 불투명하게 설정 (0.8 = 80% 불투명도) */
+    margin-bottom: 30px;
+    padding:20px;
+    position: relative;
+    z-index: 1;
+}
+
+.p::after {
+    content: ""; /* 내용 추가 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(204, 109, 20, 0.7); /* 반투명 배경색 */
+    border-radius: 15px;
+    z-index: -1; /* 배경이 글씨 뒤에 위치하도록 설정 */
+}
+
 
         button {
             padding: 15px 40px;
@@ -47,19 +62,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 60%;
         }
 
         .center-image img {
-            max-width: 100%;
+            width: 60%;
             height: auto;
         }
     </style>
 </head>
 <body>
     <div class="center-image">
-        <img src="static/title.png" alt="게임 로고">
+        <img src="static/WorldLog.png" alt="게임 로고">
     </div>
-    <p>당신의 모험을 시작하세요!</p>
+    <p class="p">당신의 모험을 시작하세요!</p>
     <button onclick="startGame()">게임 시작</button>
 
     <script>
