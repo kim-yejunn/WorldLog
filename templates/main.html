@@ -103,6 +103,18 @@
             max-width: 100%;
             height: auto;
         }
+        @media (min-width: 1200px) {
+            .center-image img {
+                max-width: 1600px; /* 더 큰 화면에서는 이미지 크기를 더 크게 */
+            }
+        }
+
+        /* 화면 크기가 800px 이하일 때 */
+        @media (max-width: 800px) {
+            .center-image img {
+                max-width: 600px; /* 작은 화면에서는 이미지 크기를 더 작게 */
+            }
+        }
 
         /* 반응형 스타일 */
         @media screen and (max-width: 768px) {

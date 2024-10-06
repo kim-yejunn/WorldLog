@@ -28,6 +28,7 @@
     padding:20px;
     position: relative;
     z-index: 1;
+    transition: padding 0.5 ease;
 }
 
 .p::after {
@@ -51,11 +52,24 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.5s ease;
         }
 
         button:hover {
             background-color: #c0392b;
+        }
+/* 버튼, 텍스트 크기 반응형 추가*/
+        @media (max-width: 500px) {
+            button {
+                padding: 10px 30px;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .p {
+                padding: 10px 30px;
+                font-size: 1rem;
+            }
         }
 
         .center-image {
@@ -68,6 +82,23 @@
         .center-image img {
             width: 60%;
             height: auto;
+            transition:0.4s ease
+        }
+
+        @media (max-width:300px)and(max-height:800px) {
+            .center-image img{
+                width: 80%;
+            }
+        }
+        @media (max-height:550px){
+            .center-image{
+                width: 40%;
+            }
+        }
+        @media (max-width:1200px) {
+            .center-image img{
+                width: 100%;
+            }
         }
     </style>
 </head>
