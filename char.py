@@ -12,7 +12,7 @@ app = Flask(__name__)
 # OpenAI API 키 설정 (환경 변수에서 가져오기)
 openai.api_key = os.getenv('FLASK_API_KEY')
 
-# 캐릭터 정보를 TXT 파일에 저장하는 함수
+# 캐릭터 정보를 TXT 파일에 저장하는 함수aa
 def save_character_to_file(character):
     try:
         with open('static/characters.txt', 'a', encoding='utf-8') as f:
