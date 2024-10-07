@@ -11,7 +11,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # OpenAI API 키 설정 (환경 변수에서 가져오기)
-openai.api_key = os.getenv('FLASK_API_KEY')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 file_path = 'responses.txt'
 
@@ -104,4 +104,4 @@ def end_trpg():
 
 # Flask 애플리케이션 실행
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5005)
