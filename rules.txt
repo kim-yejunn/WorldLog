@@ -24,3 +24,7 @@ Prompt: TRPG 게임 시작할 때 게임 배경, 미션도 알려줘
 n/10 이런식말고 그냥 n 이렇게
 
 Response: 좋습니다!
+
+Prompt: 말할때 ** 같은 거 빼줘
+
+Response: 좋습니다!
