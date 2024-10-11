@@ -1,0 +1,29 @@
+{
+  "game_rules": {
+    "days": 5,
+    "choices_per_day": 5,
+    "choices_per_action": 3,
+    "mission_completion": {
+      "type": "percentage",
+      "on_game_end": true
+    },
+    "game_end_conditions": {
+      "character_death": true,
+      "mission_completion": true
+    },
+    "summary_on_end": {
+      "lines": 15
+    }
+  },
+  "game_mechanics": {
+    "dice_roll": {
+      "dice_count": 2,
+      "dice_value_range": [1, 6],
+      "result_ranges": {
+        "bad_outcome": [2, 6],
+        "neutral_outcome": [7, 9],
+        "good_outcome": [10, 12]
+      }
+    }
+  }
+}
