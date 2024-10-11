@@ -113,9 +113,10 @@
         #response {
             position: relative;
             height: 442px;
-            left: 1360px;
-            width: 532px;
+            left: 1365px;
+            width: 520px;
             bottom: 770px;
+            max-height: 420px;
             background-color: #210b07;
             border-radius: 10px;
             font-size: 1.1rem;
@@ -125,6 +126,34 @@
             color: #ecf0f1;
             margin-top: 10px;
             margin-bottom: -1600px;
+            overflow: auto;
+        }
+                /* 위로, 아래로 버튼 스타일 */
+                .scroll-buttons {
+                    position: absolute;
+                    flex-direction: column;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+        .scroll-buttons button {
+            margin: 40px;
+            padding: 10px 17px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            left: 1240px;
+            top: 500px;
+            font-size: 1rem;
+            z-index: 3;
+        }
+
+        .scroll-buttons button:hover {
+            background-color: #c0392b;
         }
 
     </style>
@@ -141,8 +170,12 @@
         </form>
         <div class="WoodFrame"></div>
         <div id="response" class="response-container"></div>
-    <!--<h1>게임 진행</h1>-->
 
+            <!-- 스크롤 버튼 -->
+    <div class="scroll-buttons">
+        <button id="scroll-up">위로</button>
+        <button id="scroll-down">아래로</button>
+    </div>
 
 
     
@@ -166,6 +199,21 @@
             } catch (error) {
                 document.getElementById('response').textContent = `Error: ${error.message}`;
             }
+        });
+
+                // 스크롤 버튼 기능
+                document.getElementById('scroll-up').addEventListener('click', () => {
+            document.getElementById('response').scrollBy({
+                top: -100, // 위로 100px 이동
+                behavior: 'smooth' // 부드러운 스크롤
+            });
+        });
+
+        document.getElementById('scroll-down').addEventListener('click', () => {
+            document.getElementById('response').scrollBy({
+                top: 100, // 아래로 100px 이동
+                behavior: 'smooth' // 부드러운 스크롤
+            });
         });
         
         // 엔터키가 눌렸을 때 폼이 제출되도록 처리
