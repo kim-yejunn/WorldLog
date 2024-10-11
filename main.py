@@ -11,7 +11,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # OpenAI API 키 설정 (환경 변수에서 가져오기)
-openai.api_key = os.getenv('FLASK_API_KEY')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # 파일 경로 설정
 history_path = 'history.json'
