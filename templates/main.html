@@ -17,7 +17,6 @@
             overflow: auto;
             max-height: 100vh;
         }
-
         /*h1 {/*게임 진행*/
             /*font-size: 1.8rem;
             /*color: #e74c3c;
@@ -76,6 +75,7 @@
             position: relative;
             width: 800px;
             height: 100px;
+            max-height: 100px;
             padding: 10px;
             border: 2px solid #e74c3c;
             border-radius: 8px;
@@ -115,7 +115,7 @@
             height: 442px;
             left: 1365px;
             width: 520px;
-            bottom: 770px;
+            bottom: 764px;
             max-height: 420px;
             background-color: #210b07;
             border-radius: 10px;
@@ -181,14 +181,6 @@
     
 
     <script>
-
-
-    // marked 설정 조정
-    marked.setOptions({
-        breaks: false,  // 줄 바꿈을 무시하여 단일 줄로 처리
-    });
-
-        
         document.getElementById('gpt-form').addEventListener('submit', async (event) => {
             event.preventDefault();
             const prompt = document.getElementById('prompt').value;
@@ -203,13 +195,7 @@
                 });
 
                 const data = await response.json();
-                //document.getElementById('response').textContent = data.response || data.error;
-
-                 // 응답 텍스트에서 불필요한 줄 바꿈을 하나의 줄로 줄임
-                let cleanedResponse = data.response ? data.response.replace(/\n/g, '\n') : data.error;
-
-                // Markdown을 HTML로 변환하여 표시
-                 document.getElementById('response').innerHTML = marked.parse(cleanedResponse);
+                document.getElementById('response').textContent = data.response || data.error;
             } catch (error) {
                 document.getElementById('response').textContent = `Error: ${error.message}`;
             }
@@ -230,13 +216,11 @@
             });
         });
         
-              
         // 엔터키가 눌렸을 때 폼이 제출되도록 처리
         document.getElementById('prompt').addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 event.preventDefault(); // 기본 엔터 동작 방지 (새 줄 생성 방지)
                 document.getElementById('gpt-form').requestSubmit(); // 폼 제출
-                document.getElementById('prompt').value = '';
             }
         });
 
