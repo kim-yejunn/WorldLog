@@ -221,6 +221,7 @@
             if (event.key === 'Enter') {
                 event.preventDefault(); // 기본 엔터 동작 방지 (새 줄 생성 방지)
                 document.getElementById('gpt-form').requestSubmit(); // 폼 제출
+                this.value = ''; // textarea의 내용 지우기
             }
         });
 
