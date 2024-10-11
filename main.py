@@ -94,7 +94,7 @@ def call_gpt():
             return jsonify({"response": "WorldLog TRPG를 마치겠습니다..! 재밌게 시간 보내주셔서 감사합니다!"})
 
         # GPT-4 모델 호출
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": rules},
@@ -106,7 +106,8 @@ def call_gpt():
         )
 
         # 응답에서 텍스트 추출
-        generated_text = response.choices[0].message['content'].strip()
+        generated_text = response.choices[0].message.content.strip()
+
 
         # 응답 내용을 history.json에 저장
         write_to_responses(prompt, generated_text)
