@@ -87,6 +87,13 @@ def call_gpt():
         
         # 이전 응답 및 규칙 정보 읽기
         previous_responses, rules = read_previous_responses()
+
+        # TRPG 규칙 강제 적용: 만약 프롬프트가 TRPG와 무관하다면 TRPG 관련 규칙 안내
+        if not prompt.lower().startswith("trpg"):
+            # 사용자 입력이 TRPG와 관련 없을 때는 자동으로 TRPG를 시작하는 흐름
+            prompt = (
+                    "Prompt: TRPG 게임 진행 말고 다른 질문은 답을 하지마, 그리고 trpg 게임을 장르 아무거나 해서 너가 알아서 진행해줘"
+                    )
         
         # "TRPG 마치기" 입력 처리
         if prompt.strip().lower() == "trpg 마치기" and os.path.exists(history_path):
