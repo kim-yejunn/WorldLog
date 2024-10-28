@@ -20,18 +20,18 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # 파일 경로 설정
 history_path = 'history.json'
-rules_path = 'rules.json'
+rules_path = 'rules.txt'  # rules.txt로 변경
 
-# rules_path를 처음에 읽고 저장할 캐시
+# rules.txt를 처음에 읽고 저장할 캐시
 rules_cache = None  
 
-# rules.json을 읽어오는 함수
+# rules.txt를 읽어오는 함수
 def load_rules():
     global rules_cache
     if rules_cache is None and os.path.exists(rules_path):
         with open(rules_path, 'r', encoding='utf-8') as file:
-            rules_cache = json.load(file)  # JSON 형식으로 읽기
-            logger.info("rules.json 파일을 성공적으로 읽었습니다.")
+            rules_cache = file.read().strip()  # 텍스트 형식으로 읽기
+            logger.info("rules.txt 파일을 성공적으로 읽었습니다.")
 
 # history.json의 데이터가 없을 경우 그 데이터를 한번 빈값으로 만들어주기
 def initialize_history_file():
@@ -39,7 +39,7 @@ def initialize_history_file():
         with open(history_path, 'w', encoding='utf-8') as file:
             json.dump([], file)
 
-# history.json과 rules.json 불러오기. 
+# history.json과 rules.txt 불러오기. 
 def read_previous_responses():
     global rules_cache  # 전역 변수 선언
     responses = []
@@ -49,10 +49,10 @@ def read_previous_responses():
         with open(history_path, 'r', encoding='utf-8') as file:
             responses = json.load(file)
 
-    # rules_cache가 딕셔너리인지 확인
-    if not isinstance(rules_cache, dict):
-        logger.error("rules_cache가 딕셔너리가 아닙니다.")
-        rules_cache = {}  # 기본값 설정
+    # rules_cache가 문자열인지 확인
+    if not isinstance(rules_cache, str):
+        logger.error("rules_cache가 문자열이 아닙니다.")
+        rules_cache = ""  # 기본값 설정
 
     return responses, rules_cache
 
@@ -73,7 +73,7 @@ def write_to_responses(user_input, gpt_response):
     with open(history_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
-# 애플리케이션 시작 시 rules.json 파일을 한 번 읽음
+# 애플리케이션 시작 시 rules.txt 파일을 한 번 읽음
 load_rules()
 
 first_prompt = True  # 처음 프롬프트를 받았는지 여부
@@ -100,10 +100,8 @@ def call_gpt():
                 "그리고 trpg 게임을 장르 아무거나 해서 너가 알아서 진행해줘"
             )
             first_prompt = False
-        elif not prompt.lower().startswith("trpg"):
-            return jsonify({"error": "프롬프트가 'trpg'로 시작해야 합니다."}), 400
 
-        previous_responses, _ = read_previous_responses()
+        previous_responses, rules_content = read_previous_responses()
 
         if prompt.lower() == "trpg 마치기" and os.path.exists(history_path):
             os.remove(history_path)
@@ -113,7 +111,7 @@ def call_gpt():
         response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": json.dumps(rules_cache)},
+                {"role": "system", "content": rules_content},
                 {"role": "user", "content": json.dumps(previous_responses)},
                 {"role": "user", "content": prompt}
             ],
