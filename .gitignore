@@ -115,7 +115,6 @@ myenv/
 responses.txt
 
 # End of .gitignore
-*.json
 history.json
 history.txt
 history.json
