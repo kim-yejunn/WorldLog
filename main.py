@@ -2,7 +2,6 @@ import openai
 from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 import os
-import sys
 import json
 
 # .env 파일에서 환경 변수를 불러오기
@@ -23,7 +22,7 @@ def load_rules_from_json():
     if os.path.exists(rules_path):
         with open(rules_path, 'r', encoding='utf-8') as file:
             return json.load(file)
-    logger.error("rules.json 파일을 찾을 수 없습니다.")
+    print.error("rules.json 파일을 찾을 수 없습니다.")
     return {}
 
 # JSON 파일을 처음에 읽고 캐시에 저장
@@ -94,7 +93,7 @@ def call_gpt():
         return jsonify({"response": generated_text})
 
     except Exception as e:
-        logger.error(f"오류 발생: {str(e)}")  # 오류 로그 기록
+        print.error(f"오류 발생: {str(e)}")  # 오류 로그 기록
         return jsonify({"error": str(e)}), 500
 
 @app.route('/end-trpg', methods=['POST'])
