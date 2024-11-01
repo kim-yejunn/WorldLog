@@ -45,3 +45,9 @@ function autoResize(textarea) {
     textarea.style.height = 'auto';
     textarea.style.height = textarea.scrollHeight + 'px';
 }
+
+document.getElementById("gpt-form").addEventListener("submit", function(event) {
+    event.preventDefault();  
+    const promptTextarea = document.getElementById("prompt");
+    promptTextarea.value = "";
+});
