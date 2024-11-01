@@ -44,9 +44,5 @@
         "end_conditions": [
             "캐릭터 사망 시 게임 종료 후 결과와 생존 일수를 요약해서 제공."
         ]
-    },
-    "character_selection": {
-        "gender_selection": "캐릭터 선택 시, 먼저 성별을 선택하도록 요청합니다.",
-        "character_suggestion": "선택된 성별에 맞춰 자연스러운 캐릭터 예시를 제공하여, 플레이어가 선택할 수 있도록 합니다."
     }
 }
