@@ -78,7 +78,16 @@ document.getElementById('gpt-form').addEventListener('submit', async (event) => 
         });
 
         const data = await response.json();
-        document.getElementById('response').textContent = data.response || data.error;
+
+        // 응답 텍스트 표시
+        document.getElementById('response').innerHTML = marked.parse(data.response);
+
+        // 응답 텍스트에서 불필요한 줄 바꿈을 하나의 줄로 줄임
+        let cleanedResponse = data.response ? data.response.replace(/\n/g, '\n') : data.error;
+
+        // Markdown을 HTML로 변환하여 표시
+        document.getElementById('response').innerHTML = marked.parse(cleanedResponse);
+
     } catch (error) {
         document.getElementById('response').textContent = `Error: ${error.message}`;
     }
