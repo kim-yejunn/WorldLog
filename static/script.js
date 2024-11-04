@@ -78,6 +78,7 @@ document.getElementById('gpt-form').addEventListener('submit', async (event) => 
         });
 
         const data = await response.json();
+        document.getElementById('response').textContent = data.response || data.error;
 
         // 응답 텍스트 표시
         document.getElementById('response').innerHTML = marked.parse(data.response);
