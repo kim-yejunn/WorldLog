@@ -78,7 +78,7 @@ img {
     margin-left: 25%;
 }
 
-#select {
+#select1, #select2, #select3 {
     height: 180%;
     width: 30%;
     font-size: 1.5rem;
