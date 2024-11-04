@@ -46,22 +46,22 @@ function autoResize(textarea) {
     textarea.style.height = textarea.scrollHeight + 'px';
 }
 
-// 버튼1 클릭 이벤트 추가
-document.getElementById('select1').addEventListener('click', () => {
-    document.getElementById('prompt').value = '1'; // 텍스트 영역에 "1" 값 설정
+// 버튼 클릭 이벤트 핸들러 함수
+function handleButtonClick(value) {
+    console.log(`버튼 클릭: ${value}`); // 디버깅용 로그
+    document.getElementById('prompt').value = value; // 텍스트 영역에 값 설정
     document.getElementById('gpt-form').dispatchEvent(new Event('submit')); // 폼 제출 이벤트 발생
-});
+}
 
-// 버튼2 클릭 이벤트 추가
-document.getElementById('select2').addEventListener('click', () => {
-    document.getElementById('prompt').value = '2'; // 텍스트 영역에 "2" 값 설정
-    document.getElementById('gpt-form').dispatchEvent(new Event('submit')); // 폼 제출 이벤트 발생
-});
-
-// 버튼3 클릭 이벤트 추가
-document.getElementById('select3').addEventListener('click', () => {
-    document.getElementById('prompt').value = '3'; // 텍스트 영역에 "3" 값 설정
-    document.getElementById('gpt-form').dispatchEvent(new Event('submit')); // 폼 제출 이벤트 발생
+// 버튼 ID 배열과 이벤트 연결
+['select1', 'select2', 'select3'].forEach((id, index) => {
+    const button = document.getElementById(id);
+    if (button) {
+        button.addEventListener('click', () => handleButtonClick(index + 1));
+        console.log(`${id} 버튼에 이벤트 리스너 추가됨`); // 디버깅용 로그
+    } else {
+        console.error(`${id} 버튼을 찾을 수 없습니다`); // 버튼이 없을 경우 로그
+    }
 });
 
 document.getElementById('gpt-form').addEventListener('submit', async (event) => {

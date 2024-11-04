@@ -111,6 +111,7 @@ textarea {
     font-size: 1.5rem;
     background-color: #210b07;
     color: #ecf0f1;
+    resize: none;
     outline: none;
     box-sizing: border-box;
     overflow: auto;
