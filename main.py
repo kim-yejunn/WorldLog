@@ -76,8 +76,8 @@ def call_gpt():
         response = openai.chat.completions.create(
             model="gpt-4o",
             messages=[
-                {"role": "system", "content": json.dumps(rules_cache)},
-                {"role": "user", "content": json.dumps(previous_responses)},
+                {"role": "system", "content": json.dumps(rules_cache, ensure_ascii=False)},
+                {"role": "user", "content": json.dumps(previous_responses, ensure_ascii=False)},
                 {"role": "user", "content": prompt}
             ],
             max_tokens=8000,
