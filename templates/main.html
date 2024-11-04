@@ -10,19 +10,17 @@
     <div class="background"></div>
     <img src="static/title.png" alt="게임 로고">
     <div id="character-image-container" class="character-image-container"></div>
-    <div id="response" class="response-container"></div>
+    <div id="response" class="response-container"></div>    
     <button type="button" id="status">캐릭터 정보</button>
     <div class="button-container">
     <button type="button" id="select">버튼1</button>
     <button type="button" id="select">버튼2</button>
     <button type="button" id="select">버튼3</button>
     </div>
-
-    <form id="gpt-form">
+    <form id="gpt-form"></form>
         <textarea id="prompt" name="prompt" rows="4" cols="50" oninput="autoResize(this)" required></textarea><br><br>
-        <button type="submit" id="send">전송</button>
+        <button type="submit" id="send">게임 시작</button>
     </form>
-
     <script src="/static/script.js"></script>
 </body>
 </html>
