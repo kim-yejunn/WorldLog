@@ -11,17 +11,23 @@
     <div class="background"></div>
     <img src="static/title.png" alt="게임 로고" onclick="goToRoot()">
     <div id="character-image-container" class="character-image-container"></div>
-    <div id="response" class="response-container"></div>
+    <div id="response" class="response-container"></div>    
     <button type="button" id="status">캐릭터 정보</button>
     <div class="button-container">
     <button type="button" id="select1">1번</button>
     <button type="button" id="select2">2번</button>
     <button type="button" id="select3">3번</button>
     </div>
+<<<<<<< Updated upstream
     <button type="button" id="gmstart">게임 시작</button>
     <form id="gpt-form">
         <textarea id="prompt" name="prompt" rows="4" cols="50" oninput="autoResize(this)" required></textarea><br><br>
         <button type="button" id="restart">게임 재시작</button> <!-- 새 버튼 추가 -->
+=======
+    <form id="gpt-form"></form>
+        <textarea id="prompt" name="prompt" rows="4" cols="50" oninput="autoResize(this)" required></textarea><br><br>
+        <button type="submit" id="send">게임 시작</button>
+>>>>>>> Stashed changes
     </form>
     <script src="/static/script.js"></script>
 </body>
