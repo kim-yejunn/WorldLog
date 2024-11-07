@@ -126,3 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('gpt-form').requestSubmit(); // 폼 제출
     });
 });
+
+function goToRoot() {
+    window.location.href = window.location.origin; // 루트로 이동
+}
