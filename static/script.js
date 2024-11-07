@@ -103,4 +103,26 @@ document.getElementById('restart').addEventListener('click', function() {
     document.getElementById('gpt-form').requestSubmit(); // 폼 제출
 });
 
+// gmstart 버튼 클릭 시 textarea와 restart 버튼 표시
+document.addEventListener("DOMContentLoaded", function() {
+    const gmstart = document.getElementById("gmstart");
+    const textarea = document.querySelector("textarea");
+    const restart = document.getElementById("restart");
+    const select1 = document.getElementById("select1");
+    const select2 = document.getElementById("select2");
+    const select3 = document.getElementById("select3");
 
+    gmstart.addEventListener("click", function() {
+        // textarea와 restart 버튼을 보이게 설정
+        textarea.style.display = "block";
+        restart.style.display = "block";
+        select1.style.display = "block";
+        select2.style.display = "block";
+        select3.style.display = "block";
+        gmstart.style.display = "none"; // gmstart 버튼 숨기기 (선택 사항)
+
+        // "trpg 게임 시작"을 입력하고 폼 제출
+        document.getElementById('prompt').value = "trpg 게임 시작"; // "trpg 게임 시작"을 prompt에 입력
+        document.getElementById('gpt-form').requestSubmit(); // 폼 제출
+    });
+});

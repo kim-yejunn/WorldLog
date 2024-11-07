@@ -88,6 +88,7 @@ img {
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: none;
 }
 
 form {
@@ -115,6 +116,8 @@ textarea {
     box-sizing: border-box;
     overflow: auto;
     z-index: 1;
+    display: none;
+    pointer-events: none;
 }
 
 textarea:focus {
@@ -124,20 +127,35 @@ textarea:focus {
 }
 
 #restart {
-     position: relative;
-     padding: 3vh 2.0vw;
-     font-size: 1.5rem;
-     bottom: 53%;
-      left: 94%;
-      color: #fff;
-      background-color: #e74c3c;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+    position: relative;
+    padding: 3vh 2.0vw;
+    font-size: 1.5rem;
+    bottom: 53%;
+    left: 94%;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none;
+}
 
-#send:hover {
+#gmstart {
+    position: relative;
+    padding: 3vh 2.0vw;
+    font-size: 1.5rem;
+    bottom: 53%;
+    left: 94%;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#gmstart:hover {
     background-color: #c0392b;
 }
 
@@ -155,6 +173,7 @@ textarea:focus {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 @media(max-width:1687px){
     .button-container {
         position: relative;
