@@ -96,3 +96,9 @@ document.getElementById('gpt-form').addEventListener('submit', async (event) => 
 
     prompt.value = '';
 });
+
+// 새 "게임 재시작" 버튼 이벤트 핸들러
+document.getElementById('restart').addEventListener('click', function() {
+    document.getElementById('prompt').value = "게임 재시작"; // "게임 재시작"을 prompt에 입력
+    document.getElementById('gpt-form').requestSubmit(); // 폼 제출
+});

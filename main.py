@@ -71,6 +71,41 @@ def call_gpt():
         if prompt.lower() == "trpg 마치기" and os.path.exists(history_path):
             os.remove(history_path)
             return jsonify({"response": "WorldLog TRPG를 마치겠습니다..! 재밌게 시간 보내주셔서 감사합니다!"})
+        
+        # "게임 재시작" 명령어 처리
+        if "게임 재시작" in prompt.lower():
+            if os.path.exists(history_path):
+                os.remove(history_path)  # 기존 히스토리 파일 삭제
+            
+            # 게임 재시작 응답과 함께 GPT에 "trpg 시작하기" 메시지를 자동 전달
+            restart_prompt = "trpg 다시 시작하기"
+            
+            # 이전 응답과 규칙 불러오기 (초기화 후 빈 응답으로 시작)
+            previous_responses = []
+            rules_content = json.dumps(rules_cache, ensure_ascii=False)
+
+            # GPT 호출
+            response = openai.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {"role": "system", "content": json.dumps(rules_cache, ensure_ascii=False)},
+                    {"role": "user", "content": json.dumps(previous_responses, ensure_ascii=False)},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=8000,
+                temperature=0.5
+            )
+
+            # GPT의 응답 추출
+            generated_text = response.choices[0].message.content.strip()
+            previous_responses = [{"role": "user", "content": restart_prompt}, {"role": "assistant", "content": generated_text}]
+
+            # 응답 저장
+            write_to_responses(restart_prompt, generated_text)
+
+            # 사용자에게 GPT 응답 반환
+            return jsonify({"response": f"TRPG 게임을 다시 시작합니다!\n\n{generated_text}"})
+
 
         # GPT-4 모델 호출
         response = openai.chat.completions.create(

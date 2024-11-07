@@ -123,6 +123,7 @@ textarea:focus {
     box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
+/*
 #send {
     position: relative;
     padding: 1.5vh 2.0vw;
@@ -136,6 +137,22 @@ textarea:focus {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+    */
+
+
+#restart {
+     position: relative;
+     padding: 1.5vh 2.0vw;
+     font-size: 1.5rem;
+     bottom: 7%;
+      left: 39%;
+      color: #fff;
+      background-color: #e74c3c;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
 
 #send:hover {
     background-color: #c0392b;
