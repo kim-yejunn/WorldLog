@@ -102,3 +102,5 @@ document.getElementById('restart').addEventListener('click', function() {
     document.getElementById('prompt').value = "게임 재시작"; // "게임 재시작"을 prompt에 입력
     document.getElementById('gpt-form').requestSubmit(); // 폼 제출
 });
+
+
