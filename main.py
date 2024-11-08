@@ -92,7 +92,7 @@ def call_gpt():
                     {"role": "user", "content": json.dumps(previous_responses, ensure_ascii=False)},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=8000,
+                max_tokens=30000,
                 temperature=0.5
             )
 
