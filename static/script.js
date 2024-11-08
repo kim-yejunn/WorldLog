@@ -78,6 +78,8 @@ function handleResponseImages(responseText) {
         '판타지': 'Fantasy.jpg',
         '사이버펑크': 'Cyberpunk.jpg',
         '좀비': 'Zombie.jpg',
+        '아포칼립스': 'apocalyptic.jpg',
+        '우주': 'universe.jpg',
     };
 
     // 응답 텍스트에서 단어가 포함된 경우 이미지를 추가
