@@ -625,7 +625,7 @@ textarea:focus {
     }
     
 }
-@media(max-height:768px){
+@media(max-height:768px) and (pointer: coarse){
     img{
         position: absolute;
         bottom: 65%;
