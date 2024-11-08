@@ -47,11 +47,14 @@ document.getElementById('gpt-form').addEventListener('submit', async (event) => 
 
         //asdad
         const data = await response.json(); 
-        
+
         document.getElementById('response').textContent = data.response || data.error;
 
         // 응답 텍스트 표시
         document.getElementById('response').innerHTML = marked.parse(data.response);
+
+        // 특정 단어 감지 및 이미지 추가
+        handleResponseImages(data.response);
 
         // 응답 텍스트에서 불필요한 줄 바꿈을 하나의 줄로 줄임
         let cleanedResponse = data.response ? data.response.replace(/\n/g, '\n') : data.error;
