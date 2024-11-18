@@ -128,7 +128,22 @@ textarea:focus {
 
 #restart {
     position: relative;
-    padding: 3vh 2.0vw;
+    padding: 2.5vh 1.5vw;
+    font-size: 1.5rem;
+    bottom: 53%;
+    left: 94%;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: none;
+}
+
+#gmend {
+    position: relative;
+    padding: 2.5vh 1.5vw;
     font-size: 1.5rem;
     bottom: 53%;
     left: 94%;
@@ -260,7 +275,7 @@ textarea:focus {
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-    
+
     form {
         display: flex;
         flex-direction: column;
@@ -313,6 +328,21 @@ textarea:focus {
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
+    #gmend {
+        position: relative;
+        padding: 2.5vh 1.5vw;
+        font-size: 1.5rem;
+        bottom: 63%;
+        left: 79%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
+    
 }
 @media(max-width:1287px){
     #response {
@@ -420,6 +450,20 @@ textarea:focus {
         border-radius: 30px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+    }
+    #gmend {
+        position: relative;
+        padding: 2.5vh 1.5vw;
+        font-size: 1.5rem;
+        bottom: 63%;
+        left: 60%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
     }
     
 }
@@ -529,6 +573,20 @@ textarea:focus {
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
+    #gmend {
+        position: relative;
+        padding: 2vh 1vw;
+        font-size: 1.5rem;
+        bottom: 2%;
+        left: 19%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
     
 }
 @media(max-width:900px){
@@ -536,7 +594,7 @@ textarea:focus {
         position: absolute;
         width: 60%;
         height: 55%;
-        bottom: 35%;
+        bottom: 43%;
         background-color: #210b07;
         border-color: #e74c3c;
         border-radius: 10px;
@@ -623,6 +681,20 @@ textarea:focus {
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
+    #gmend {
+        position: relative;
+        padding: 2vh 1vw;
+        font-size: 1.5rem;
+        bottom: 2%;
+        left: 15%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
     
 }
 @media(max-height:768px) and (pointer: coarse){
@@ -695,6 +767,20 @@ textarea:focus {
         max-width: 60%;
         left: 12.5%;
         top:28%;
+    }
+    #gmend {
+        position: relative;
+        padding: 2vh 1vw;
+        font-size: 0.7rem;
+        bottom: 2%;
+        left: 15%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
     }
     
     #select1, #select2, #select3 {
@@ -844,6 +930,20 @@ textarea:focus {
         box-sizing: border-box;
         overflow: auto;
         z-index: 1;
+    }
+    #gmend {
+        position: relative;
+        padding: 3vh 2.0vw;
+        font-size: 1.5rem;
+        bottom: 53%;
+        left: 94%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
     }
     #restart {
         position: relative;

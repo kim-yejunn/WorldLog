@@ -68,7 +68,7 @@ def call_gpt():
 
         previous_responses, rules_content = read_previous_responses()
 
-        if prompt.lower() == "trpg 마치기" and os.path.exists(history_path):
+        if prompt.lower() == "trpg 게임 종료" and os.path.exists(history_path):
             os.remove(history_path)
             return jsonify({"response": "WorldLog TRPG를 마치겠습니다..! 재밌게 시간 보내주셔서 감사합니다!"})
         
@@ -92,7 +92,7 @@ def call_gpt():
                     {"role": "user", "content": json.dumps(previous_responses, ensure_ascii=False)},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=30000,
+                max_tokens=8000,
                 temperature=0.5
             )
 

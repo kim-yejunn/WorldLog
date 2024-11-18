@@ -101,19 +101,27 @@ document.getElementById('restart').addEventListener('click', function() {
     document.getElementById('gpt-form').requestSubmit(); // 폼 제출
 });
 
-// gmstart 버튼 클릭 시 textarea와 restart 버튼 표시
+// 새 "게임 종료" 버튼 이벤트 핸들러
+document.getElementById('gmend').addEventListener('click', function() {
+    document.getElementById('prompt').value = "trpg 게임 종료"; // "trpg 게임 종료"을 prompt에 입력
+    document.getElementById('gpt-form').requestSubmit(); // 폼 제출
+});
+
+// gmstart 버튼 클릭 시 textarea와 restart, gmend 버튼 표시
 document.addEventListener("DOMContentLoaded", function() {
     const gmstart = document.getElementById("gmstart");
     const textarea = document.querySelector("textarea");
     const restart = document.getElementById("restart");
+    const gmend = document.getElementById("gmend");
     const select1 = document.getElementById("select1");
     const select2 = document.getElementById("select2");
     const select3 = document.getElementById("select3");
 
     gmstart.addEventListener("click", function() {
-        // textarea와 restart 버튼을 보이게 설정
+        // textarea와 restart, gmend 버튼을 보이게 설정
         textarea.style.display = "block";
         restart.style.display = "block";
+        gmend.style.display = "block";
         select1.style.display = "block";
         select2.style.display = "block";
         select3.style.display = "block";
