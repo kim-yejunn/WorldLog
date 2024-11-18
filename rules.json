@@ -41,7 +41,7 @@
         ]
     },
     "termination": {
-        "message_on_end": "WorldLog가 종료되었습니다. 감사합니다.",
+        "message_on_end": "WorldLog TRPG를 마치겠습니다..! 재밌게 시간 보내주셔서 감사합니다!",
         "end_conditions": [
             "캐릭터 사망 시 게임 종료 후 결과와 생존 일수를 요약해서 제공."
         ]
