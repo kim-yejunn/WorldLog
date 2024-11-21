@@ -13,7 +13,7 @@ body {
 }
 
 .background {
-    background-image: url('/static/sml_back.png');
+    background-image: url('/static/wallpaper2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,8 +26,9 @@ body {
 }
 
 img {
-    margin-right: 70%;
+    position: relative;
     margin-bottom: 15%;
+    right: 35%;
     width: 20%;
 }
 
@@ -48,7 +49,8 @@ img {
 .image-container img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    top: 6%;
+    left: 0.1%;
 }
 
 #response {
@@ -104,7 +106,6 @@ textarea {
     position: relative;
     width: 123%;
     left:18%;
-    top: 5%;
     height: 50%;
     border: 2px solid #e74c3c;
     border-radius: 8px;
@@ -128,9 +129,10 @@ textarea:focus {
 
 #restart {
     position: relative;
-    padding: 2.5vh 1.5vw;
+    width: 20%;
+    height: 30%;
     font-size: 1.5rem;
-    bottom: 53%;
+    bottom:60%;
     left: 94%;
     color: #fff;
     background-color: #e74c3c;
@@ -143,7 +145,8 @@ textarea:focus {
 
 #gmend {
     position: relative;
-    padding: 2.5vh 1.5vw;
+    width: 20%;
+    height: 30%;
     font-size: 1.5rem;
     bottom: 53%;
     left: 94%;
@@ -198,7 +201,7 @@ textarea:focus {
         width: 100%;
         max-width: 60%;
         left: 12.5%;
-        top:5%;
+        top: 3%;
     }
     
     #select1, #select2, #select3 {
@@ -212,6 +215,25 @@ textarea:focus {
         border-radius: 30px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+    }
+    textarea {
+        position: relative;
+        width: 117%;
+        left:20%;
+        height: 50%;
+        bottom: 10%;
+        border: 2px solid #e74c3c;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        resize: none;
+        background-color: #210b07;
+        color: #ecf0f1;
+        outline: none;
+        box-sizing: border-box;
+        overflow: auto;
+        z-index: 1;
+        display: none;
+        pointer-events: none;
     }
     #gmstart {
         position: relative;
@@ -235,7 +257,133 @@ textarea:focus {
         position: relative;
         top: 12%;
     }
+    #restart {
+        position: relative;
+        width: 20%;
+        height: 20%;
+        font-size: 1.5rem;
+        bottom:72%;
+        left: 90%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
     
+    #gmend {
+        position: relative;
+        width: 20%;
+        height: 20%;
+        font-size: 1.5rem;
+        bottom: 66%;
+        left: 90%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
+}
+    @media(max-width:1527px){
+        .button-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 60%;
+            left: 12.5%;
+            top: 6%;
+        }
+        
+        #select1, #select2, #select3 {
+            position: relative;
+            height: 180%;
+            width: 30%;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #9b7134;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        textarea {
+            position: relative;
+            width: 117%;
+            left:20%;
+            height: 50%;
+            bottom: 10%;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            resize: none;
+            background-color: #210b07;
+            color: #ecf0f1;
+            outline: none;
+            box-sizing: border-box;
+            overflow: auto;
+            z-index: 1;
+            display: none;
+            pointer-events: none;
+        }
+        #gmstart {
+            position: relative;
+            width: 60%;
+            height: 15%;
+            font-size: 1.5rem;
+            left: 13%;
+            top:5%;
+            margin-bottom: 4%;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: 12%;
+        }
+        #restart {
+            position: relative;
+            width: 20%;
+            height: 20%;
+            font-size: 1.5rem;
+            bottom:72%;
+            left: 90%;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none;
+        }
+        
+        #gmend {
+            position: relative;
+            width: 20%;
+            height: 20%;
+            font-size: 1.5rem;
+            bottom: 66%;
+            left: 90%;
+            color: #fff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none;
+        }
 }
 @media(max-width:1400px){
     .button-container {
@@ -245,7 +393,7 @@ textarea:focus {
         width: 100%;
         max-width: 60%;
         left: 12.5%;
-        top:8%;
+        top:11%;
     }
     
     #select1, #select2, #select3 {
@@ -288,7 +436,7 @@ textarea:focus {
         position: relative;
         width: 100%;
         left:16%;
-        top: 5%;
+        top: 10%;
         height: 50%;
         border: 2px solid #e74c3c;
         border-radius: 8px;
@@ -303,17 +451,35 @@ textarea:focus {
     }
     #restart {
         position: relative;
-        padding: 2.5vh 1.5vw;
+        width: 20%;
+        height: 20%;
         font-size: 1.5rem;
-        bottom: 53%;
-         left: 79%;
-         color: #fff;
-         background-color: #e74c3c;
-         border: none;
-         border-radius: 8px;
-         cursor: pointer;
-         transition: background-color 0.3s ease;
-       }
+        bottom:55%;
+        left: 77%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
+    
+    #gmend {
+        position: relative;
+        width: 20%;
+        height: 20%;
+        font-size: 1.5rem;
+        bottom: 45%;
+        left: 77%;
+        color: #fff;
+        background-color: #e74c3c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: none;
+    }
        #status {
         position: relative;
         font-size: 1.5rem;
@@ -328,23 +494,9 @@ textarea:focus {
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-    #gmend {
-        position: relative;
-        padding: 2.5vh 1.5vw;
-        font-size: 1.5rem;
-        bottom: 63%;
-        left: 79%;
-        color: #fff;
-        background-color: #e74c3c;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        display: none;
-    }
     
 }
-@media(max-width:1287px){
+@media(max-width:1100px){
     #response {
         position: absolute;
         width: 60%;
@@ -368,7 +520,7 @@ textarea:focus {
         width: 100%;
         max-width: 60%;
         left: 12.5%;
-        top:10%;
+        top:14%;
     }
     
     #select1, #select2, #select3 {
@@ -411,7 +563,7 @@ textarea:focus {
         position: relative;
         width: 70%;
         left:9%;
-        top: 5%;
+        top: 19%;
         height: 50%;
         border: 2px solid #e74c3c;
         border-radius: 8px;
@@ -428,8 +580,8 @@ textarea:focus {
         position: relative;
         padding: 2.5vh 1.5vw;
         font-size: 1.5rem;
-        bottom: 53%;
-         left: 60%;
+        bottom: 40%;
+         left: 55%;
          color: #fff;
          background-color: #e74c3c;
          border: none;
@@ -442,7 +594,7 @@ textarea:focus {
         font-size: 1.5rem;
         width: 20%;
         height: 6%;
-        top: 25%;
+        top: 30%;
         right: 34%;
         color: #fff;
         background-color: #e74c3c;
@@ -455,8 +607,8 @@ textarea:focus {
         position: relative;
         padding: 2.5vh 1.5vw;
         font-size: 1.5rem;
-        bottom: 63%;
-        left: 60%;
+        bottom: 34%;
+        left: 55%;
         color: #fff;
         background-color: #e74c3c;
         border: none;
