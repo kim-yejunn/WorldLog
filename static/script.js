@@ -75,7 +75,7 @@ function handleResponseImages(responseText) {
 
     // 단어와 이미지 매핑
     const wordImageMap = {
-        '판타지': 'Fantasy.png',
+        '판타지': 'fantasy.png',
         '사이버펑크': 'Cyberpunk.png',
         '좀비': 'Zombie.png',
         '아포칼립스': 'apocalyptic.png',
