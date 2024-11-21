@@ -75,11 +75,12 @@ function handleResponseImages(responseText) {
 
     // 단어와 이미지 매핑
     const wordImageMap = {
-        '판타지': 'fantasy.png',
+        'WorldLog TRPG 게임을 시작합니다!': 'select.png',
+        '판타지 왕국 세': 'fantasy.png',
         '사이버펑크': 'Cyberpunk.png',
         '좀비': 'Zombie.png',
-        '아포칼립스': 'apocalyptic.png',
-        '우주': 'universe.png',
+        '포스트 아포칼립스 세계관을': 'apocalyptic.png',
+        '우주 세계관을': 'universe.png',
     };
 
     // 응답 텍스트에서 단어가 포함된 경우 이미지를 추가
