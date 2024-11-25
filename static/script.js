@@ -77,27 +77,51 @@ function handleResponseImages(responseText) {
     const wordImageMap = {
         //초기 시작
         'WorldLog TRPG 게임을 시작합니다!': 'select.png',
+        'WorldLog TRPG 게임을 시작하겠습니다!': 'select.png',
         'WorldLog TRPG 게임에 오신 것을 환영합니다!': 'select.png',
-        //판타지
-        '판타지 왕국 세': 'fantasy.png',
-        '판타지 세계를 선택하셨군요': 'fantasy.png',
-        '용맹한 기사를 선택하셨군요': 'Knight.png',
         '사이버펑크': 'Cyberpunk.png',
         '좀비': 'Zombie.png',
         '포스트 아포칼립스 세계관을': 'apocalyptic.png',
         '우주 세계관을': 'universe.png',
+        //판타지
+        '판타지 왕국 세계를': 'Fantasy/fantasy.png',
+        '판타지 세계를': 'Fantasy/fantasy.png',
+        '용맹한 기사를 선택하셨군요': 'Fantasy/Knight.png',
+        '전사를 선택하셨군요': 'Fantasy/Knight.png',
+        '마법사를 선택하셨군요': 'Fantasy/wizard.png',
+        '전사를 선택하셨군요': 'Fantasy/Knight.png',
+        '당신은 숲을 탐색하여 몬스터의 흔적을 찾기로 결정했습니다': 'Day1_Monster.png',
+        //판타지 Day1
+
     };
 
-    // 응답 텍스트에서 단어가 포함된 경우 이미지를 추가
-    Object.keys(wordImageMap).forEach((keyword) => {
+    let matchedKeyword = null; // 매칭된 키워드를 추적
+
+    Object.keys(wordImageMap).some((keyword) => {
         if (responseText.includes(keyword)) {
+            matchedKeyword = keyword;
+
+            // 이미지 요소 생성
             const img = document.createElement('img');
             img.src = `/static/images/${wordImageMap[keyword]}`;
             img.alt = keyword;
-            img.classList.add('response-image'); // 스타일을 위한 클래스
+            img.classList.add('response-image'); // CSS 스타일용 클래스
             imageContainer.appendChild(img);
+
+            return true; 
         }
+        return false; 
     });
+
+    if (!matchedKeyword) {
+        console.log('키워드가 없음: 기본 이미지를 표시합니다.');
+
+        const defaultImg = document.createElement('img');
+        defaultImg.src = `/static/images/default.png`; 
+        defaultImg.alt = 'Default Image';
+        defaultImg.classList.add('response-image');
+        imageContainer.appendChild(defaultImg);
+    }
 }
 
 
