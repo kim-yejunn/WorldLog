@@ -92,6 +92,8 @@ function handleResponseImages(responseText) {
         '전사를 선택하셨군요': 'Fantasy/Knight.png',
         '당신은 숲을 탐색하여 몬스터의 흔적을 찾기로 결정했습니다': 'Day1_Monster.png',
         //판타지 Day1
+        //디스토피아
+        '디스토피아 미래 세계를': 'Dystopia/Dystopia.png'
 
     };
 
