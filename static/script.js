@@ -75,8 +75,13 @@ function handleResponseImages(responseText) {
 
     // 단어와 이미지 매핑
     const wordImageMap = {
+        //초기 시작
         'WorldLog TRPG 게임을 시작합니다!': 'select.png',
+        'WorldLog TRPG 게임에 오신 것을 환영합니다!': 'select.png',
+        //판타지
         '판타지 왕국 세': 'fantasy.png',
+        '판타지 세계를 선택하셨군요': 'fantasy.png',
+        '용맹한 기사를 선택하셨군요': 'Knight.png',
         '사이버펑크': 'Cyberpunk.png',
         '좀비': 'Zombie.png',
         '포스트 아포칼립스 세계관을': 'apocalyptic.png',
