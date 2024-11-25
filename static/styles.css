@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "BMYEONSUNG_ttf";
+    src: url("fonts/BMYEONSUNG_ttf.ttf");
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'BMYEONSUNG_ttf';
     margin: 0;
     padding: 0;
     background-color: #160705;
@@ -80,6 +85,7 @@ img {
 }
 
 #select1, #select2, #select3 {
+    font-family: 'BMYEONSUNG_ttf';
     position: relative;
     height: 180%;
     width: 30%;
@@ -103,6 +109,7 @@ form {
 }
 
 textarea {
+    font-family: 'BMYEONSUNG_ttf';
     position: relative;
     width: 123%;
     left:18%;
@@ -128,6 +135,7 @@ textarea:focus {
 }
 
 #restart {
+    font-family: 'BMYEONSUNG_ttf';
     position: relative;
     width: 20%;
     height: 30%;
@@ -144,6 +152,7 @@ textarea:focus {
 }
 
 #gmend {
+    font-family: 'BMYEONSUNG_ttf';
     position: relative;
     width: 20%;
     height: 30%;
@@ -160,6 +169,7 @@ textarea:focus {
 }
 
 #gmstart {
+    font-family: 'BMYEONSUNG_ttf';
     position: relative;
     width: 60%;
     height: 15%;
@@ -179,6 +189,7 @@ textarea:focus {
 }
 
 #status {
+    font-family: 'BMYEONSUNG_ttf';
     position: relative;
     font-size: 1.5rem;
     width: 20%;
