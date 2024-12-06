@@ -87,11 +87,15 @@ function handleResponseImages(responseText) {
         '판타지 왕국 세계를': 'Fantasy/fantasy.png',
         '판타지 세계를': 'Fantasy/fantasy.png',
         '용맹한 기사를 선택하셨군요': 'Fantasy/Knight.png',
-        '전사를 선택하셨군요': 'Fantasy/Knight.png',
-        '마법사를 선택하셨군요': 'Fantasy/wizard.png',
-        '전사를 선택하셨군요': 'Fantasy/Knight.png',
-        '당신은 숲을 탐색하여 몬스터의 흔적을 찾기로 결정했습니다': 'Day1_Monster.png',
+        '전사를 선택': 'Fantasy/Knight.png',
+        '마법사를 선택': 'Fantasy/wizard.png',
+        '전사를 선택': 'Fantasy/Knight.png',
+        
         //판타지 Day1
+        '당신은 숲을 탐색하여 몬스터의 흔적을 찾기로 결정했습니다': 'Fantasy/Day1_Monster.png',
+        '정보를 수집하기로 결정' : 'Fantasy/TalkToCitizen.png',
+        '당신은 고대 유적지로' : 'Fantasy/ToRuins.png',
+        '어두운 통로' : 'Fantasy/Tunnel.png',
         //디스토피아
         '디스토피아 미래 세계를': 'Dystopia/Dystopia.png'
 
